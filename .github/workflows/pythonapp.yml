@@ -2,7 +2,7 @@ name: habitist
 
 on:
   schedule:
-    - cron: '15 18 * * *'
+    - cron: '00 22 * * *'
 
 jobs:
   build:
@@ -21,6 +21,6 @@ jobs:
         pip install -r requirements.txt
     - name: Run habitist
       env:
-        TODOIST_APIKEY: ${{ secrets.TODOIST_APIKEY }}
+        TODOIST_APIKEY: ${{ secrets.todoist_key }}
       run: |
         python habits.py
